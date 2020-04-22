@@ -1,0 +1,70 @@
+<body>
+    <div class="searchbox">
+       <div class="header">
+         <h1>Search</h1>
+         <input onkeyup="filter()" type="text" id="value" placeholder="Type to Search">
+       </div>
+ 
+       <div class="container">
+ 
+         <div class="item">
+           <span class="icon">A</span>
+           <span class="name">Apple</span>
+         </div>
+ 
+         <div class="item">
+           <span class="icon">O</span>
+           <span class="name">Orange</span>
+         </div>
+ 
+         <div class="item">
+           <span class="icon">M</span>
+           <span class="name">Mandarin</span>
+         </div>
+ 
+         <div class="item">
+           <span class="icon">S</span>
+           <span class="name">Strawberry</span>
+         </div>
+ 
+         <div class="item">
+           <span class="icon">W</span>
+           <span class="name">Watermelon</span>
+         </div>
+ 
+         <div class="item">
+            <span class="icon">G</span>
+           <span class="name">Grape</span>
+         </div>
+ 
+         <div class="item"> 
+            <span class="icon">P</span>
+           <span class="name">Pear</span>
+         </div>
+ 
+         <div class="item">
+            <span class="icon">C</span>
+           <span class="name">Cherry</span>
+         </div>
+       </div>
+     </div>
+ </body>
+ <link rel="stylesheet" href="test.css">
+ <script type="text/javascript">
+    function filter(){
+
+      var value, name, item, i;
+
+      value = document.getElementById("value").value.toUpperCase();
+      item = document.getElementsByClassName("item");
+
+      for(i=0;i<item.length;i++){
+        name = item[i].getElementsByClassName("name");
+        if(name[0].innerHTML.toUpperCase().indexOf(value) > -1){ // inneHTML은 자바스크립트에서도 HTML요소에 접근할 수 있다. indexOf는 문자열 내에서 특정한 문자열의 index 값을 리턴한다. 찾는 문자열이 없을 경수 -1을 리턴함
+          item[i].style.display = "flex";
+        }else{
+          item[i].style.display = "none";
+        }
+      }
+    }
+</script>
